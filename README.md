@@ -7,7 +7,15 @@ Examples of using mupdf (fitz) library.
 git clone https://github.com/CosminEugenDinu/mupdf-examples.git
 cd mupdf-examples
 chmod +x install-mupdf.sh
-sudo ./install-mupdf.sh
+./install-mupdf.sh
+```
+## How to compile examples
+```sh
+gcc -I/usr/local/include -o example \
+	example.c \
+	/usr/local/lib/libmupdf.a \
+	/usr/local/lib/libmupdfthird.a \
+	-lm
 ```
 
 ### mupdf documentation
