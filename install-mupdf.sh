@@ -15,4 +15,6 @@ sudo make HAVE_X11=no HAVE_GLFW=no HAVE_GLUT=no prefix=/usr/local install
 
 cd ..
 rm mupdf-1.17.0-source.tar.gz
+rm -r mupdf-1.17.0-source
+
 echo "mupdf is installed in /usr/local"
