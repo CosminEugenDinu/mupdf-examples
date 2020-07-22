@@ -1,7 +1,7 @@
 # mupdf-examples
 Examples of using mupdf (fitz) library.
 
-## install mupdf
+## Install mupdf
 
 ```sh
 wget https://mupdf.com/downloads/archive/mupdf-1.17.0-source.tar.gz
