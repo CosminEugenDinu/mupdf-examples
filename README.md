@@ -14,7 +14,7 @@ chmod +x install-mupdf.sh
 gcc -I/usr/local/include -o example \
 	example.c \
 	/usr/local/lib/libmupdf.a \
-	/usr/local/lib/libmupdfthird.a \
+	/usr/local/lib/libmupdf-third.a \
 	-lm
 ```
 
