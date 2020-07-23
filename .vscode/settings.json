@@ -1,0 +1,7 @@
+{
+    "code-runner.executorMap": {
+        "c": "cd $dir && gcc -I/usr/local/include -o $fileNameWithoutExt $fileName /usr/local/lib/libmupdf.a /usr/local/lib/libmupdf-third.a -lm",
+        "cpp": "cd $dir && g++ -I/usr/local/include -o $fileNameWithoutExt $fileName /usr/local/lib/libmupdf.a /usr/local/lib/libmupdf-third.a -lm",
+    },
+    "code-runner.runInTerminal": true
+}
