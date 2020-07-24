@@ -3,8 +3,10 @@
 # This script reads input type windows file path (like "C:\Users\some doc.pdf")
 
 
-printf "\n  Welcome to PDF pages_count!\n  Press Enter to begin."
-read
+printf "\n  Welcome to PDF pages_count!\n\n"
+
+old_ifs="$IFS"
+IFS=$'\n'
 
 count=0
 while true; do
@@ -15,15 +17,25 @@ while true; do
     printf       "| $count. Drag a pdf file and press Enter. | \n"
     printf "%s\n" ' -------------------------------------'
 
-    folder="$(pwd)"
+    # user input from drag file in cmd
     read -r doc_path
-    # only document name.ext
-    doc_path=${doc_path##*\\}
-    # get rid of last \" of name has spaces
-    doc_path=${doc_path/\"/}
-    doc_linux_path="$folder/$doc_path"
 
-    pages=$(~/mupdf-examples/examples/pages_count "$doc_linux_path")
+    # this_dir="$(pwd)"
+    this_file=$0
+    this_dir=${this_file%/*}
+    # one directory up
+    up_dir=${this_dir%/*}
+    program_path="$up_dir/examples/pages_count"
+
+
+    # backslash to slash
+    doc_path=${doc_path//\\/\/}
+    # remove quotes
+    doc_path=${doc_path//\"/}
+    # change C: to /mnt/c
+    doc_path=${doc_path/C:/\/mnt\/c}
+
+    pages=$($program_path $doc_path)
 
     printf "\n Total pages: %s\n" $pages
     printf "%s\n" ' -----------------------'
@@ -31,3 +43,5 @@ while true; do
     printf "%s\n" ' -----------------------'
 
 done
+
+IFS=$old_ifs
