@@ -4,10 +4,13 @@ Examples of using mupdf (fitz) library.
 ## Install mupdf
 
 ```sh
-git clone https://github.com/CosminEugenDinu/mupdf-examples.git
-cd mupdf-examples
-chmod +x install-mupdf.sh
+# copy in linux bash shell (requires sudo in order to install in /usr/local)
+(
+git clone https://github.com/CosminEugenDinu/mupdf-examples.git 
+cd mupdf-examples 
+chmod +x install-mupdf.sh 
 ./install-mupdf.sh
+)
 ```
 ## How to compile examples
 ```sh
